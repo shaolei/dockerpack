@@ -1,0 +1,13 @@
+version: '3'
+services:
+  redis:
+    image: redis:6
+    container_name: docker_redis
+    volumes:
+      - ./datadir:/data
+      - ./conf/redis.conf:/usr/local/etc/redis/redis.conf
+      - ./logs:/logs
+    ports:
+      - 6379:6379
+    restart: always
+    
